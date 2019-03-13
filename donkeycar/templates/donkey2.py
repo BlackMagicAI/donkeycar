@@ -19,7 +19,7 @@ import donkeycar as dk
 from donkeycar.parts.camera import PiCamera
 from donkeycar.parts.transform import Lambda
 from donkeycar.parts.keras import KerasLinear
-from donkeycar.parts.actuator import PCA9685, PWMSteering, PWMThrottle
+from donkeycar.parts.actuator import PCA9685, PWMSteering, PWMThrottle, DifferentialDriveMixer
 from donkeycar.parts.datastore import TubGroup, TubWriter
 from donkeycar.parts.web_controller import LocalWebController
 from donkeycar.parts.clock import Timestamp
@@ -96,19 +96,14 @@ def drive(cfg, model_path=None, use_chaos=False):
                   'pilot/angle', 'pilot/throttle'],
           outputs=['angle', 'throttle'])
 
-    steering_controller = PCA9685(cfg.STEERING_CHANNEL)
-    steering = PWMSteering(controller=steering_controller,
-                           left_pulse=cfg.STEERING_LEFT_PWM,
-                           right_pulse=cfg.STEERING_RIGHT_PWM) 
+    right_controller = PICONZERO(cfg.MOTOR_CHANNEL1)
 
-    throttle_controller = PCA9685(cfg.THROTTLE_CHANNEL)
-    throttle = PWMThrottle(controller=throttle_controller,
-                           max_pulse=cfg.THROTTLE_FORWARD_PWM,
-                           zero_pulse=cfg.THROTTLE_STOPPED_PWM,
-                           min_pulse=cfg.THROTTLE_REVERSE_PWM)
+    left_controller = PICONZERO(cfg.MOTOR_CHANNEL0)
 
-    V.add(steering, inputs=['angle'])
-    V.add(throttle, inputs=['throttle'])
+    dd = DifferentialDriveMixer(left_motor=left_controller,
+                                 right_motor =right_controller)
+
+    V.add(dd, inputs=['throttle', 'angle'])
 
     # add tub to save data
     inputs = ['cam/image_array', 'user/angle', 'user/throttle', 'user/mode', 'timestamp']
