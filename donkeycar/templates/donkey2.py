@@ -19,7 +19,7 @@ import donkeycar as dk
 from donkeycar.parts.camera import PiCamera
 from donkeycar.parts.transform import Lambda
 from donkeycar.parts.keras import KerasLinear
-from donkeycar.parts.actuator import PCA9685, PWMSteering, PWMThrottle, DifferentialDriveMixer
+from donkeycar.parts.actuator import PCA9685, PICONZERO, PWMSteering, PWMThrottle, DifferentialDriveMixer
 from donkeycar.parts.datastore import TubGroup, TubWriter
 from donkeycar.parts.web_controller import LocalWebController
 from donkeycar.parts.clock import Timestamp
@@ -96,9 +96,9 @@ def drive(cfg, model_path=None, use_chaos=False):
                   'pilot/angle', 'pilot/throttle'],
           outputs=['angle', 'throttle'])
 
-    right_controller = PICONZERO(cfg.MOTOR_CHANNEL1)
+    right_controller = PICONZERO(cfg.MOTOR_CHANNEL0)
 
-    left_controller = PICONZERO(cfg.MOTOR_CHANNEL0)
+    left_controller = PICONZERO(cfg.MOTOR_CHANNEL1)
 
     dd = DifferentialDriveMixer(left_motor=left_controller,
                                  right_motor =right_controller)
