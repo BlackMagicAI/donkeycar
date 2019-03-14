@@ -11,6 +11,8 @@ community contributions.
 
 #### Quick Links
 * [Quasiboto Repository](https://github.com/mtedder/Quasiboto)
+* [differential steering code derived from this source](https://github.com/autorope/donkeycar/blob/c05e774d0838776705f0fa35fcd90301e8b9f2b2/donkey/mixers.py)
+* [And this source] (https://electronics.stackexchange.com/questions/19669/algorithm-for-mixing-2-axis-analog-input-to-control-a-differential-motor-drive)
 
 ![donkeycar](./docs/assets/build_hardware/quasibotojr.jpg)
 
