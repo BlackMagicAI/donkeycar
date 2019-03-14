@@ -17,13 +17,13 @@ community contributions.
 ![donkeycar](./docs/assets/build_hardware/quasibotojr.jpg)
 
 #### Use Quasiboto Donkey if you want to:
-* Make an RC car drive its self.
+* Make an Quasiboto Robot drive its self.
 * Compete in self driving races like [DIY Robocars](http://diyrobocars.com)
 * Experiment with autopilots, mapping computer vision and neural networks.
 * Log sensor data. (images, user inputs, sensor readings)
-* Drive your car via a web or game controller.
+* Drive your Quasiboto Robot via a web or game controller.
 * Leverage community contributed driving data.
-* Use existing CAD models for design upgrades.
+* Customize your Quasiboto robot from the Open Source project.
 
 ### Get driving.
 After building a Quasiboto robot you can turn on your car and go to http://localhost:8887 to drive.
