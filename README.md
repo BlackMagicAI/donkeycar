@@ -27,15 +27,15 @@ community contributions.
 After building a Quasiboto robot you can turn on your car and go to http://localhost:8887 to drive.
 
 ### Modify your cars behavior.
-The donkey car is controlled by running a sequence of events
+Quasiboto is controlled by running a sequence of events
 
 ### Setup and Driving info
-Quasiboto set is the same as for the original donkeycar but the steps are repeated here.
-1.
-2.
-3.
-4.
-5.
+Quasiboto setup is the same as for the original donkeycar but the steps are repeated here.
+1. Step1
+2. Step2
+3. Step3
+4. Step4
+5. Step5
 
 See [home page](http://donkeycar.com), [docs](http://docs.donkeycar.com)
 or join the [Slack channel](http://www.donkeycar.com/community.html) to learn more.
