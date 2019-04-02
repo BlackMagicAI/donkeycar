@@ -1,0 +1,94 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="author" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Joystick Controller</title>
+
+<!-- main JS libs -->
+<script src="js/libs/jquery-1.10.0.js"></script>
+<script src="js/libs/bootstrap.min.js"></script>
+
+<!-- Style CSS -->
+<link href="css/bootstrap.css" media="screen" rel="stylesheet">
+<link href="style.css" media="screen" rel="stylesheet">
+
+<!-- custom css -->
+<link href="css/custom.css" rel="stylesheet">
+
+<!--[if lt IE 9]><script src="js/respond.min.js"></script><![endif]-->
+<!--[if gte IE 9]>
+<style type="text/css">
+    .gradient {filter: none !important;}
+</style>
+<![endif]-->
+    
+</head>
+
+<body>             
+            <div class="row">               
+                 <div class="col-sm-4 text-center"><!-- col2 -->
+                 <div class="add-comment add-comment-velvet" id="addcomments">
+                 <div class="add-comment-title"> <h3>Joystick Control</h3></div>                                                                                     
+
+            <!-- row -->
+            <div class="row">
+            	<!-- Start Joystick control -->
+                <div class="col-sm-8">                
+                    <!-- Volume control -->
+                    <div id="knobcontainer" class="widget-knob widget-volume container">                                                          
+					 
+                        <input type="text" value="0" autocomplete="off" id="volume"/>
+ 						<img class="ui-widget ui-widget-content" src="images/knob.png" alt="" style="width:100px;height:100px; background-color: transparent; border: none;  z-index: 2;" id="knob"/>
+                    </div>
+                    <!--/ Volume control -->
+                </div>
+				<!-- End Joystick control -->
+
+				<!-- Start Encoder jog value slider-->
+                <div class="col-sm-4">
+                    <!-- <span id="jogdisplay" class="center">Jog: 0</span> -->
+                    <div class="scrollbars clearfix">
+                        <!-- ScrollBars -->
+                        <span id="jogdisplay" class="mark-left">Jog: 0</span> &nbsp &nbsp<span id="jogpowerdisplay" class="mark-right">Power: 0</span>	
+                        <div id="jogvalue" class="scrollbar">
+                            <p>These examples show very basic functionality and exist so that I can test that any changes to jScrollPane work cross browser and don't cause any new problems. Note that these examples aren't meant to look pretty, they merely highlight different bits of functionaity which are available. If you want examples of jScrollPane looking good then check out the themes.</p>
+                        </div>
+                       
+                        <!-- <span id="jogpowerdisplay" class="center">Power: 0</span> -->	
+                        <div id="jogpower" class="scrollbar">
+                            <p>These examples show very basic functionality and exist so that I can test that any changes to jScrollPane work cross browser and don't cause any new problems. Note that these examples aren't meant to look pretty, they merely highlight different bits of functionaity which are available. If you want examples of jScrollPane looking good then check out the themes.</p>
+                        </div> 
+                        	                       
+                        <!--/ ScrollBars -->
+                    </div>
+                </div> 
+				<!-- End Encoder jog value slider-->                              
+            </div>
+ 
+<!-- Javascript code -->
+<!-- Scroll Bars -->
+<script src="js/jquery.jscrollpane.min.js"></script>
+
+<!--Draggable api-->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/custom/jquery.ui.touch-punch.min.js"></script><!-- to handle drag and drop on mobile devices ref: http://touchpunch.furf.com/-->
+
+<!-- /////////////////////// -->
+<!-- Volume, Balance -->
+<script type="text/javascript" src="js/knobRot-0.2.2.js"></script>
+
+<script src="js/custom/index.js"></script>
+
+<script src="js/joystick.js"></script>
+
+<script src="js/server/main.js"></script>
+</body>
+</html>
