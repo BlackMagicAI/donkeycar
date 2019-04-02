@@ -7,7 +7,7 @@ are wrapped in a mixer class before being used in the drive loop.
 import time
 import math
 import donkeycar as dk
-#import piconzero as pz #comment this line when trainning
+import piconzero as pz #comment this line when trainning
 
 SERVO_OUTPUT = 2
 STOP = 90
@@ -21,7 +21,7 @@ servoPort2 = 2
 
 #sudo i2cdetect -y 1 #To View i2c addresses
  #initialize and clear settings
-#pz.init( ) #comment this line when trainning
+pz.init( ) #comment this line when trainning
 
 class PCA9685:
     """
